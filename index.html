@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Guessing Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>GUESS MY SECRET NUMBER</h1>
+      <p>Choose a Number Between 1 and 15</p>
+
+      <div class="input-container">
+        <input type="number" id="guessInput" min="1" max="15" />
+        <button id="guessButton">Guess</button>
+      </div>
+      <p class="inputText">Hmm... Guessing</p>
+
+      <div class="scores-container">
+        <p>Score: 15</p>
+        <p>High Score: 15</p>
+      </div>
+
+      <button id="retryButton">Retry</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
