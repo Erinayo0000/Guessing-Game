@@ -11,6 +11,7 @@ document.querySelector("#guessButton").addEventListener("click", function () {
       "WOW...You guessed right!😍😍";
     document.querySelector(".container").style.backgroundColor = "#D391B0";
     document.querySelector("#guessButton").style.backgroundColor = "#5D3C64";
+    document.querySelector("#retryButton").style.backgroundColor = "#5D3C64";
   } else if (guess > secretNumber) {
     if (scores > 1) {
       document.querySelector(".inputText").textContent =
@@ -36,4 +37,13 @@ document.querySelector("#guessButton").addEventListener("click", function () {
       document.querySelector(".scores").textContent = `Score: ${scores}`;
     }
   }
+});
+document.querySelector("#retryButton").addEventListener("click", function () {
+  scores = 15;
+  document.querySelector(".inputText").textContent = "Hmm... Guessing";
+  document.querySelector(".container").style.backgroundColor = "#b4b1ba";
+  document.querySelector("#guessButton").style.backgroundColor = "#371f30";
+  document.querySelector("#retryButton").style.backgroundColor = "#371f30";
+
+  document.querySelector(".scores").textContent = `Score: ${scores}`;
 });
