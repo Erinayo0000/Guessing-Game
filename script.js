@@ -44,6 +44,6 @@ document.querySelector("#retryButton").addEventListener("click", function () {
   document.querySelector(".container").style.backgroundColor = "#b4b1ba";
   document.querySelector("#guessButton").style.backgroundColor = "#371f30";
   document.querySelector("#retryButton").style.backgroundColor = "#371f30";
-
+  document.querySelector("#guessInput").value = "";
   document.querySelector(".scores").textContent = `Score: ${scores}`;
 });
