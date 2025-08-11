@@ -2,6 +2,7 @@
 
 const secretNumber = Math.trunc(Math.random() * 15) + 1;
 let scores = 15;
+let highscore = 0;
 document.querySelector("#guessButton").addEventListener("click", function () {
   const guess = Number(document.querySelector("#guessInput").value);
   if (!guess) {
@@ -12,6 +13,12 @@ document.querySelector("#guessButton").addEventListener("click", function () {
     document.querySelector(".container").style.backgroundColor = "#D391B0";
     document.querySelector("#guessButton").style.backgroundColor = "#5D3C64";
     document.querySelector("#retryButton").style.backgroundColor = "#5D3C64";
+    if (scores > highscore) {
+      highscore = scores;
+      document.querySelector(
+        ".highscore"
+      ).textContent = `High Score :${highscore}`;
+    }
   } else if (guess > secretNumber) {
     if (scores > 1) {
       document.querySelector(".inputText").textContent =
@@ -44,6 +51,6 @@ document.querySelector("#retryButton").addEventListener("click", function () {
   document.querySelector(".container").style.backgroundColor = "#b4b1ba";
   document.querySelector("#guessButton").style.backgroundColor = "#371f30";
   document.querySelector("#retryButton").style.backgroundColor = "#371f30";
-  document.querySelector("#guessInput").value = "";
+  document.querySelector("#guessInput").value = " ";
   document.querySelector(".scores").textContent = `Score: ${scores}`;
 });
