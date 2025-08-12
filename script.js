@@ -19,7 +19,23 @@ document.querySelector("#guessButton").addEventListener("click", function () {
         ".highscore"
       ).textContent = `High Score :${highscore}`;
     }
-  } else if (guess > secretNumber) {
+  } else if (guess !== secretNumber) {
+    if (scores > 1) {
+      document.querySelector(".inputText").textContent =
+        guess > secretNumber
+          ? "OH NO...Your guess is too high!😢"
+          : "OH NO...Your guess is too low!😢";
+      scores--;
+      document.querySelector(".scores").textContent = `Score: ${scores}`;
+    } else {
+      scores = 0;
+      document.querySelector(".inputText").textContent =
+        "Game Over! You lost all your scores!😢";
+      document.querySelector(".scores").textContent = `Score: ${scores}`;
+    }
+  }
+  //commented out after learning about refactoring and DRY principles
+  /*else if (guess > secretNumber) {
     if (scores > 1) {
       document.querySelector(".inputText").textContent =
         "OH NO...Your guess is too high!😢";
@@ -43,8 +59,9 @@ document.querySelector("#guessButton").addEventListener("click", function () {
         "Game Over! You lost all your scores!😢";
       document.querySelector(".scores").textContent = `Score: ${scores}`;
     }
-  }
+  }*/
 });
+
 document.querySelector("#retryButton").addEventListener("click", function () {
   scores = 15;
   document.querySelector(".inputText").textContent = "Hmm... Guessing";
